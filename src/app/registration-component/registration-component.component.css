@@ -1,0 +1,40 @@
+.bg-img {
+    /* The image used */
+    background-image: url("F:\angularlearning\ViewTube\src\assets\images\viewtube.jpg");
+    min-height: 950px;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Needed to position the navbar */
+    position: relative;
+}
+
+.my-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.container {
+    display: inline;
+    text-align: center;
+}
+
+.content {
+    width: 450px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-size {
+    width: 100%;
+}

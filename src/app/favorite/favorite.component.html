@@ -1,0 +1,73 @@
+<div class=navbar>
+    <ul class="nav nav-pills">
+        <form>
+
+
+        </form>
+
+    </ul>
+    <ul>
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home">
+                <h5>Back</h5>
+            </a>
+        </li>
+    </ul>
+    <ul class="nav justify-content-end">
+        <!-- <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="home">
+                <h5>Trending</h5>
+            </a>
+        </li> -->
+        <!-- <li class="nav-item">
+            <a class="nav-link" href="Favorites">
+                <h2>Favorites</h2>
+            </a>
+        </li> -->
+
+
+        <li class="nav-item">
+
+            <button type="submit" (click)="logout()">LogOut</button>
+        </li>
+    </ul>
+</div>
+
+
+
+
+<!--<div class="categories">
+  <button class="button button1" (click)="getPopularVideos()">All</button>
+  <button class="button button1" *ngFor="let category of categories" (click)="getVideosByCategory(category.id)">{{category.snippet.title}}</button>
+
+</div>-->
+
+<div class=trendingvideo>
+    <div class="videos">
+        <section class="video-section">
+
+            <article class="video-container" *ngFor="let video of videos">
+                <a target="_blank" href='https://www.youtube.com/embed/{{video.videoId}}'>
+                    <img width="600" height="300" src="{{video.thumbna}}" />
+                </a>
+               
+
+                <div class="video-bottom-section">
+                    <a href="#">
+                        <img class="channel-icon" [src]="video.thumbna" />
+                    </a>
+                    <div class="video-details">
+                        <a href="#" class="video-title">{{video.tittle}}</a>
+                        <a href="#" class="video-channel-name">{{video.channelTittle}}</a>
+                        <button type="submit" (click)="remove(video.id)">Remove from favourites</button>
+
+                        <!-- <div class="video-metadata">
+                            <span>633,145 views</span> •
+                            <span>4 week ago</span>
+                        </div> -->
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>

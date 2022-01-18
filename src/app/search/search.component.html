@@ -1,0 +1,70 @@
+<div class=navbar>
+    <ul class="nav nav-pills">
+        <h1>ViewTube</h1>
+
+        <form>
+            <input type="text" placeholder="Search.." name="search" [(ngModel)]="searchKey">
+            <button type="submit" name="Searchbox" (click)="search()">Submit</button>
+        </form>
+
+    </ul>
+    <ul class="nav justify-content-end">
+        <!-- <li class="nav-item">
+
+          <button class="nav-link active" name="trending" aria-current="page" href="home">Trending></button>
+      </li>  -->
+        <li class="nav-item">
+            <button class="nav-link" (click)="navigatetofav()" name="Favourite"><h5>Favorites</h5></button>
+        </li>
+
+
+
+        <li class="nav-item">
+
+            <button class="nav-link" name="Logout" type="submit" (click)="logout()">LogOut</button>
+        </li>
+    </ul>
+</div>
+
+
+
+<div class="categories">
+    <button class="button button1" name="categories" (click)="getPopularVideos()">All</button>
+    <button class="button button1" *ngFor="let category of categories" (click)="getVideosByCategory(category.id)">{{category.snippet.title}}</button>
+
+</div>
+<h1></h1>
+
+
+<div class=trendingvideo>
+    <div class="videos">
+        <section class="video-section">
+
+            <article class="video-container" *ngFor="let video of videos">
+
+
+                <!-- <iframe width="420" height="315" src="https://www.youtube.com/embed/{{video.id.videoId}}"></iframe> -->
+                <a target="_blank" href='https://www.youtube.com/embed/{{video.id.videoId}}'>
+                    <img width="600" height="300" src="{{video.snippet.thumbnails.medium.url}}" />
+                </a>
+
+                <div class="video-bottom-section">
+                    <!-- <a href="#">
+                      <img class="channel-icon" [src]="video.snippet.thumbnails.high" />
+                  </a> -->
+                    <div class="video-details">
+                        <a href="" class="video-title">{{video.snippet.title}}</a>
+                        <h1>{{video.snippet.title}}-</h1>
+                        <a href="https://www.youtube.com/channel/{{video.snippet.channelId}}" class="video-channel-name">{{video.snippet.channelTitle}}</a>-->
+                        <button mat-raised-button color="warn" name="AddFavourite" class="video-channel-name" (click)="addFav(video)">Add to Favorites</button>
+
+                        <div class="video-metadata">
+                            <span>633,145 views</span> •
+                            <span>4 week ago</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>
